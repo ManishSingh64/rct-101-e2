@@ -1,15 +1,22 @@
 import React from "react";
+import AddProducts from "./AddProduct";
+import Pagination from "./Pagination";
+import Product from "./Product";
+import {Flex,Grid} from "@chakra-ui/react"
 
-const Products = () => {
+
+const Products = ({data,handleOnChange,handleSubmit}) => {
   // TODO: Remove below const and instead import them from chakra
-  const Flex = () => <div />;
-  const Grid = () => <div />;
+  // const Flex = () => <div />;
+  // const Grid = () => <div />;
 
   return (
     <Flex>
-      {/*  AddProduct */}
-      <Grid>{/* List of Products */}</Grid>
-      {/* Pagination */}
+      <AddProducts handleOnChange={handleOnChange} handleSubmit={handleSubmit}/>
+      <Grid>
+        <Product data={data} />
+      </Grid>
+      <Pagination />
     </Flex>
   );
 };
